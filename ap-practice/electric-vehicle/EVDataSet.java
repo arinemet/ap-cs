@@ -24,7 +24,7 @@ public class EVDataSet {
     ArrayList<String> ret = new ArrayList<>();
     for (ElectricVehicle vehicle : vehicleList) {
       if (vehicle.getRange() > target) {
-        
+
         if (!ret.contains(vehicle.getModelName())) {
           ret.add(vehicle.getModelName());
         }

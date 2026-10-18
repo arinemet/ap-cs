@@ -1,0 +1,38 @@
+public class Seating {
+  private int[][] seats; // each cell is 0 (empty) or 1 (taken)
+
+  /**
+   * Returns the row index (0-based) with the most empty seats. If there is a tie,
+   * returns the smallest such row index. Precondition: seats has at least 1 row
+   * and 1 column.
+   */
+  public int emptiestRow() {
+    // track the number of empty seats in a given row
+    int[] rows;
+    for (int r = 0; r < seats.length; r++) {
+      int empty = 0;
+      for (int c = 0; c < seats[r].length; c++) {
+        if (seats[r][c] == 0) {
+          empty++
+        }
+      }
+      rows[r] = empty;
+    }
+  }
+
+  /**
+   * Returns true if there exist two adjacent columns c and c+1 such that NO row
+   * has BOTH seats[r][c] AND seats[r][c+1] taken. In other words: for that column
+   * pair, every row has at least one of the two seats empty. Returns false
+   * otherwise.
+   *
+   * Examples (T = taken=1, _ = empty=0): _ T _ T _ T _ _ T -> Check cols 0,1: row
+   * 0 has _T (one empty), row 1 has T_ (one empty), row 2 has __ (both empty). No
+   * row has both taken. → cols 0,1 work. Returns true.
+   *
+   * T T T T -> Cols 0,1: every row has both taken. Returns false.
+   */
+  public boolean hasOpenPair() {
+    /* part (b) */
+  }
+}
